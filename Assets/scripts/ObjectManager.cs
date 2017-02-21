@@ -29,6 +29,7 @@ namespace MultiPlayer
                 catch (ArgumentException)
                 {
                     Debug.LogError("Object named \"" + name_short + "\" has already existed.");
+                    UnityEngine.Object.Destroy(networkObject.gameObject);
                     return false;
                 }
             else
@@ -41,7 +42,8 @@ namespace MultiPlayer
                 }
                 catch (ArgumentException)
                 {
-                    Debug.LogError("Owner already has an object named \"" + name_short + "\".");
+                    Debug.LogError("Owner \"" + owner + "\" already has an object named \"" + name_short + "\".");
+                    UnityEngine.Object.Destroy(networkObject.gameObject);
                     return false;
                 }
             }
@@ -118,7 +120,7 @@ namespace MultiPlayer
 
         public static void syncObject() // synchronize local objects
         {
-            //Debug.Log("Sync");
+            //Debug.Log("Sync " + localObjDict.Count);
             foreach (KeyValuePair<string, NetworkObject> kv in localObjDict)
             {
                 string objStateArgs = kv.Value.getStateArgs();

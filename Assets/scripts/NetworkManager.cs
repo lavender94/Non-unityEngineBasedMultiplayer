@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MultiPlayer
+﻿namespace MultiPlayer
 {
     public static class NetworkManager
     {

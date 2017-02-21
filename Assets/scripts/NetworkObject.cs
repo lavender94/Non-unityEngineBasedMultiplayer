@@ -5,8 +5,9 @@ namespace MultiPlayer
     public abstract class NetworkObject : MonoBehaviour
     {
         public string prefabClassName = null;
+        // use ObjectManager.genName(owner, name_short) to generate gameobject name
         public string owner = null;
-        public string name_short = null; // real name: use ObjectManager.genName(owner, name_short)
+        public string name_short = null; 
 
         // When inherited, always call the Start() from baseclass first, using base.Start()
         public virtual void Start()

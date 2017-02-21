@@ -23,13 +23,9 @@ public class SimpleNetworkObject : NetworkObject {
 
 	// Use this for initialization
 	public override void Start () {
-        prefabClassName = "partical_system";
         base.Start();
         // do something for initialization
         actions = new Queue<ActionPacket>();
-
-        // network test
-        ObjectManager.syncObject();
     }
 	
 	// Update is called once per frame
